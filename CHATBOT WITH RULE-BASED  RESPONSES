@@ -1,0 +1,40 @@
+# Simple Rule-Based Chatbot
+
+# Function to respond to user queries
+def chatbot_response(user_input):
+    user_input = user_input.lower()  # Convert input to lowercase for easier matching
+    
+    # Greeting responses
+    if "hello" in user_input or "hi" in user_input:
+        return "Hello! How can I assist you today?"
+    
+    # Goodbye responses
+    elif "bye" in user_input:
+        return "Goodbye! Have a great day!"
+    
+    # Asking for help
+    elif "help" in user_input:
+        return "I'm here to help! You can ask me anything about our services, products, or general information."
+    
+    # Respond to questions about the chatbot
+    elif "who are you" in user_input or "what is your name" in user_input:
+        return "I am a simple rule-based chatbot created to answer your questions!"
+    
+    # Specific information responses
+    elif "services" in user_input:
+        return "We offer a variety of services, including consulting, customer support, and technical assistance."
+    elif "products" in user_input:
+        return "Our products range from software solutions to digital platforms. Feel free to ask more about each product!"
+    
+    # Default response if the query doesn't match predefined rules
+    else:
+        return "I'm sorry, I didn't understand that. Could you please rephrase your question?"
+
+# Run the chatbot in a loop until the user says "bye"
+print("Welcome to the Chatbot! Type 'bye' to exit.")
+while True:
+    user_input = input("You: ")
+    response = chatbot_response(user_input)
+    print("Chatbot:", response)
+    if "bye" in user_input.lower():
+        break
